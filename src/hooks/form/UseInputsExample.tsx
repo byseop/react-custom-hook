@@ -7,6 +7,8 @@ function UseInputsExample() {
     email: '',
   });
 
+  console.log(nickname, email);
+
   return (
     <>
       <input name="nickname" value={nickname} onChange={e => onChange(e)} />

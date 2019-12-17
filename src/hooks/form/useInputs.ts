@@ -1,8 +1,9 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useReducer } from 'react';
+
 
 /**
  *
- * useInputs
+ *** useInputs
  *
  * @export
  * @template Form
@@ -10,17 +11,33 @@ import { useState, useCallback } from 'react';
  * @returns {[Form, (e: React.ChangeEvent<HTMLInputElement>) => void, () => void]}
  */
 
+type Action = { type: 'CHANGE'; payload: { name: string; value: string; } } | { type: 'RESET' };
+
 export default function useInputs<Form>(
   initialForm: Form,
 ): [Form, (e: React.ChangeEvent<HTMLInputElement>) => void, () => void] {
-  const [form, setForm] = useState(initialForm);
+  const reducer = function(state: Form, action: Action): Form {
+    switch (action.type) {
+      case 'CHANGE':
+        return {
+          ...state,
+          [action.payload.name]: action.payload.value,
+        };
+      case 'RESET':
+        return initialForm;
+      default:
+        return state;
+    }
+  };
+
+  const [form, dispatch] = useReducer(reducer, initialForm);
 
   const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setForm(form => ({ ...form, [name]: value }));
+    dispatch({ type: 'CHANGE', payload: { name, value } });
   }, []);
 
-  const reset = useCallback(() => setForm(initialForm), [initialForm]);
+  const reset = useCallback(() => dispatch({ type: 'RESET' }), []);
 
   return [form, onChange, reset];
 }
