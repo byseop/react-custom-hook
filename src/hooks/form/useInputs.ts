@@ -1,6 +1,5 @@
 import { useCallback, useReducer } from 'react';
 
-
 /**
  *
  *** useInputs
@@ -11,18 +10,20 @@ import { useCallback, useReducer } from 'react';
  * @returns {[Form, (e: React.ChangeEvent<HTMLInputElement>) => void, () => void]}
  */
 
-type Action = { type: 'CHANGE'; payload: { name: string; value: string; } } | { type: 'RESET' };
+type Action = { type: 'CHANGE'; payload: { name: string; value: string } } | { type: 'RESET' };
 
 export default function useInputs<Form>(
   initialForm: Form,
 ): [Form, (e: React.ChangeEvent<HTMLInputElement>) => void, () => void] {
   const reducer = function(state: Form, action: Action): Form {
     switch (action.type) {
-      case 'CHANGE':
+      case 'CHANGE': {
+        const { name, value } = action.payload;
         return {
           ...state,
-          [action.payload.name]: action.payload.value,
+          [name]: value,
         };
+      }
       case 'RESET':
         return initialForm;
       default:
