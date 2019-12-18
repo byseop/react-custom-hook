@@ -6,7 +6,7 @@ export default function UseActiveExample() {
 
   return (
     <>
-      {isActive ? <div>Active</div> : <div>Deactive</div>}
+      {isActive ? <div>Activate</div> : <div>Deactivate</div>}
       <button onClick={activate}>Active</button>
       <button onClick={deactivate}>Deactive</button>
     </>

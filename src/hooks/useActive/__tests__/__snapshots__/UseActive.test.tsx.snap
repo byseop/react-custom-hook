@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UseActiveExample /> matches snapshot 1`] = `
+<div>
+  <div>
+    Deactivate
+  </div>
+  <button>
+    Active
+  </button>
+  <button>
+    Deactive
+  </button>
+</div>
+`;
