@@ -1,10 +1,10 @@
 import React from 'react';
-import UseInputsExample from './hooks/useInputs/UseInputsExample';
+import UseActiveExample from './hooks/useActive/UseActiveExample'
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <UseInputsExample />
+      <UseActiveExample />
     </div>
   );
 }
