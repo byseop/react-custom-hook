@@ -13,7 +13,7 @@ function UseInputsExample() {
     <>
       <input name="nickname" placeholder="nickname" value={nickname} onChange={e => onChange(e)} />
       <input name="email" placeholder="email" value={email} onChange={e => onChange(e)} />
-      <button onClick={reset} />
+      <button onClick={reset}>Reset</button>
     </>
   );
 }

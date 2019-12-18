@@ -12,6 +12,8 @@ exports[`<UseInputsExample /> matches snapshot 1`] = `
     placeholder="email"
     value=""
   />
-  <button />
+  <button>
+    Reset
+  </button>
 </div>
 `;
