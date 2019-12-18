@@ -1,5 +1,5 @@
 import React from 'react';
-import UseInputsExample from './hooks/form/UseInputsExample';
+import UseInputsExample from './hooks/useInputs/UseInputsExample';
 
 const App: React.FC = () => {
   return (
