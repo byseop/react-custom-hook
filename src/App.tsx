@@ -1,10 +1,10 @@
 import React from 'react';
-import UseActiveExample from './hooks/useActive/UseActiveExample'
+import UseToggleExample from './hooks/useToggle/UseToggleExample';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <UseActiveExample />
+      <UseToggleExample />
     </div>
   );
 }

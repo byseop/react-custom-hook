@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UseToggleExample /> matches snapshot 1`] = `
+<div>
+  <div>
+    false
+  </div>
+  <button>
+    toggle button
+  </button>
+</div>
+`;
