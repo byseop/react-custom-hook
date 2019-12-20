@@ -10,7 +10,13 @@ yarn start
 ```
 This will start the development sever on <code>http://localhost:3000</code>. This should reload automatically when you make changes to the code, but no code is perfect, so sometiems you may need to restart it. :)  
   
+## Contribute  
 Please contribute your useful custom hooks!  
+
+## Test  
+```
+yarn test
+```
   
 ## Server/Build Options  
 This repo is generated from [https://github.com/facebook/create-react-app](https://github.com/facebook/create-react-app).  

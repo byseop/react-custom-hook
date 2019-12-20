@@ -1,10 +1,10 @@
 import React from 'react';
-import UseToggleExample from './hooks/useToggle/UseToggleExample';
+import UseInputsExample from './hooks/useInputs/UseInputsExample';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <UseToggleExample />
+      <UseInputsExample />
     </div>
   );
 }
