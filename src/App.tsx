@@ -1,12 +1,12 @@
 import React from 'react';
-import UseInputsExample from './hooks/useInputs/UseInputsExample';
+import UseAsyncExample from './hooks/useAsync/UseAsyncExample';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <UseInputsExample />
+      <UseAsyncExample />
     </div>
   );
-}
+};
 
 export default App;
