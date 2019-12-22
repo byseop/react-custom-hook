@@ -20,7 +20,15 @@ function UseInputsExample() {
         }
       />
       <input name="email" placeholder="email" value={email} onChange={e => onChange(e)} />
-      <button onClick={reset}>Reset</button>
+      <button
+        onClick={() => {
+          reset(() => {
+            console.log('This is reset callback');
+          });
+        }}
+      >
+        Reset
+      </button>
     </>
   );
 }

@@ -10,12 +10,15 @@ type Action = { type: 'CHANGE'; payload: { name: string; value: string } } | { t
  * @template Form
  * @param {Form} initialForm
  * @param {Function} [callback]
- * @returns {[Form, (e: React.ChangeEvent<HTMLInputElement>, callback?: Function) => void, () => void]}
+ * @returns {[Form, (e: React.ChangeEvent<HTMLInputElement>, callback?: Function) => void, (callback?: Function) => void]}
  */
 export default function useInputs<Form>(
   initialForm: Form,
-  callback?: Function,
-): [Form, (e: React.ChangeEvent<HTMLInputElement>, callback?: Function) => void, () => void] {
+): [
+  Form,
+  (e: React.ChangeEvent<HTMLInputElement>, callback?: Function) => void,
+  (callback?: Function) => void,
+] {
   const reducer = function(state: Form, action: Action): Form {
     switch (action.type) {
       case 'CHANGE': {
@@ -40,10 +43,10 @@ export default function useInputs<Form>(
     callback?.();
   }, []);
 
-  const reset = useCallback(() => {
+  const reset = useCallback((callback?: Function) => {
     dispatch({ type: 'RESET' });
     callback?.();
-  }, [callback]);
+  }, []);
 
   return [form, onChange, reset];
 }
