@@ -26,7 +26,7 @@ function useAsync(): [State, (config: AxiosRequestConfig) => Promise<void>] {
     error: null,
   };
 
-  const reducer = function(state: State, action: Action) {
+  const reducer = function(state: State, action: Action): State {
     switch (action.type) {
       case 'REQUEST_START':
         return {
